@@ -1,3 +1,4 @@
+import 'package:contador/controllers/contador_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,14 +12,6 @@ class Pagina2 extends StatefulWidget {
 }
 
 class _Pagina2State extends State<Pagina2> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,24 +27,25 @@ class _Pagina2State extends State<Pagina2> {
             const Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            GetBuilder<ContadorController>(builder: (controller) {
+              return Text('${controller.value}');
+            }),
             ElevatedButton(
               onPressed: () {
-                Get.toNamed('/pagina1');
+                Get.offAndToNamed('/pagina1');
               },
               child: const Text('Ir para a página 1'),
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      floatingActionButton: GetBuilder<ContadorController>(builder: (controller) {
+        return FloatingActionButton(
+          onPressed: controller.incrementar,
+          tooltip: 'Increment',
+          child: const Icon(Icons.add),
+        );
+      }),
     );
   }
 }

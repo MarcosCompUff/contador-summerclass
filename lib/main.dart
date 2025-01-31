@@ -1,9 +1,12 @@
+import 'package:contador/controllers/contador_controller.dart';
 import 'package:contador/ui/pagina1.dart';
 import 'package:contador/ui/pagina2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
+  Get.put(ContadorController());
+
   runApp(const MyApp());
 }
 
