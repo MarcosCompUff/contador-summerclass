@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Pagina2 extends StatefulWidget {
   const Pagina2({super.key, required this.title});
@@ -39,7 +40,7 @@ class _Pagina2State extends State<Pagina2> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/pagina1');
+                Get.toNamed('/pagina1');
               },
               child: const Text('Ir para a página 1'),
             ),

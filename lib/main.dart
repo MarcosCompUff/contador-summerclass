@@ -19,11 +19,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue),
         primaryColor: Colors.blue,
       ),
+      initialRoute: "/pagina1",
       getPages: [
-        GetPage(name: "/1", page:() => const Pagina1(title: "Página 1",)),
-        GetPage(name: "/2", page:() => const Pagina2(title:"Página 2")),
+        GetPage(name: "/pagina1", page:() => const Pagina1(title: "Página 1",)),
+        GetPage(name: "/pagina2", page:() => const Pagina2(title:"Página 2")),
       ],
-      initialRoute: "/1",
     );
   }
 }
