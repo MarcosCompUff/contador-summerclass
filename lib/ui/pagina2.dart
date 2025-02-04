@@ -27,8 +27,8 @@ class _Pagina2State extends State<Pagina2> {
             const Text(
               'You have pushed the button this many times:',
             ),
-            GetBuilder<ContadorController>(builder: (controller) {
-              return Text('${controller.value}');
+            Obx(() {
+              return Text('${Get.find<ContadorController>().value}');
             }),
             ElevatedButton(
               onPressed: () {

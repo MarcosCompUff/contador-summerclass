@@ -2,12 +2,11 @@ import 'package:get/get.dart';
 
 class ContadorController extends GetxController {
 
-  int _contador = 0; // variável privada
-  int get value => _contador;
-  set value(int newValue) => _contador = newValue;
+  final RxInt _contador = 0.obs; // variável privada
+  int get value => _contador.value;
+  set value(int newValue) => _contador.value = newValue;
 
   void incrementar() {
-    _contador++;
-    update();
+    _contador.value++;
   }
 }
